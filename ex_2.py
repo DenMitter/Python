@@ -12,8 +12,8 @@ elif action == 2:
         print(f'Результат: {num_two}')
     else:
         print(f'Результат: {num_one}')
-else:
-    print(f'Результат: {num_one} = {num_two}')
+elif action == 3: print(f'Результат: {num_one + num_two / 2}')
+else: print('Command not found')
 
 
 
