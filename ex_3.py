@@ -1,8 +1,10 @@
 try:
     price = int(input('Введіть вартість однієї ігрової приставки: '))
-    playses = int(input('Введіть ількість ігрових приставок: '))
+    playses = int(input('Введіть кількість ігрових приставок: '))
     discount = int(input('Введіть їх знижку: '))
     all = playses * price // discount
+    if discount > 100:
+        raise Exception('Знижка більше 100%, введіть корректне значення')
 
     print('~~~~~~~~~~~~~~ Що виводимо ~~~~~~~~~~~~~~')
     print('|                                       |')
