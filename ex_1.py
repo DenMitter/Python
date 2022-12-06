@@ -2,10 +2,10 @@ try:
     begin = int(input('begin->'))
     end = int(input('end->'))
 
-    if begin > end: end, begin = begin, end
     for item in range(begin, end+1):
-        if item %2 != 0:
-            print(item, end='\t')
+        print(item, end='\t:')
+        if item % 7 == 0: print('Число кратне 7')
+        else: print('Число не кратне 7')
 
 except ValueError as vl_ex:
     print(f'Value error: {vl_ex}')
