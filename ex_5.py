@@ -3,7 +3,9 @@ try:
     end = int(input('end->'))
 
     if begin > end: end, begin = begin, end
-    for item in range(begin, end+1): print(item, end='\t')
+    for item in range(begin, end+1):
+        if item %2 != 0:
+            print(item, end='\t')
 
 except ValueError as vl_ex:
     print(f'Value error: {vl_ex}')
