@@ -1,8 +1,9 @@
 try:
     length = int(input('length->'))
+    symbol = input('symbol->')
 
     for item in range(0, length):
-        print('*', end='')
+        print(symbol, end='')
 
 except ValueError as vl_ex:
     print(f'Value error: {vl_ex}')
