@@ -1,7 +1,7 @@
 import random
 try:
     guesses_made = 0
-    number = random.randint(1, 30)
+    number = random.randint(1, 500)
     print ('Я загадав число між 1 и 500. Зможеш вгадати?')
 
     while guesses_made < 6:
