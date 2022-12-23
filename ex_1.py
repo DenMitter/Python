@@ -1,8 +1,8 @@
 try:
-    num_one = int(input('Введи перше число: '))
-    num_two = int(input('Введи друге число: '))
+    num = int(input('Введи число: '))
 
-    print(f'Результат: {num_one**num_two}')
+    for i in range(1, num+1):
+        print(f'Результат: 7*{i}={num*i}')
 
 except Exception as ex:
     print(f'Error [{ex.__class__.__name__}]: {ex}')
