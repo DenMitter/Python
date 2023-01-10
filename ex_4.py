@@ -1,6 +1,6 @@
 try:
-    num_one = int(input("Введіть ширину квадрата: "));
-    num_two = int(input("Введіть висоту квадрата: "));
+    num_one = int(input("Введіть ширину прямокутника: "));
+    num_two = int(input("Введіть висоту прямокутника: "));
 
     for i in range(0, num_one):
         for x in range(0, num_two):
