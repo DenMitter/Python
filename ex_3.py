@@ -1,13 +1,14 @@
 try:
-    num = int(input("Введіть число: "));
+    num_one = int(input("Введіть число: "));
+    num_two = int(input("Введіть число: "));
 
     for i in range(1, 10+1):
         for x in range(1, 10+1):
-            print(f'{i} * {x} = {i*x}', end='\t\t')
-        print()
-
-        for x in range(1, 235):
-            print('-', end='')
+            if num_one == x:
+                print(f'{i} * {x} = {i*x}', end='\t\t')
+            elif num_two == x:
+                print(f'{i} * {x} = {i*x}', end='\t\t')
+            
         print()
     print()
 
