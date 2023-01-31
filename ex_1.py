@@ -1,36 +1,69 @@
 import random
 try:
-    length = int(input("Введіть кількість елементів у списках: "))
-    choice = int(input("1) Елементи обох списків \n2) Елементи обох списків без повторень \n3) Елементи, спільні для двох списків \n4) Тільки унікальні елементи кожного зі списків \n5) Усе вище \n Введіть свій вибір:"))
-    list1 = []
-    list2 = []
+    #----------------------------------------------#
+    lengthOflist = int(input('Length of list->'))
+    begin = int(input('begin->'))
+    end = int(input('end->'))
+    if begin > end:
+        begin, end = end, begin
+    numbers = list()
+    for i in range(0, lengthOflist):
+        numbers.append(random.randint(begin, end))
+    print(numbers)
+    #----------------------------------------------#
 
-    if length > 0:
-        for i in range(length):
-            list1.append(random.randint(0, 100))
-            list2.append(random.randint(0, 100))
+    
+    sum_neg = 0
+    for num in numbers:
+        if num < 0:
+            sum_neg += num
+    print('sum negative-> ', sum_neg)
 
-        print("Список 1: ", list1)
-        print("Список 2: ", list2)
+    sum_even = 0
+    for num in numbers:
+        if num % 2 == 0:
+            sum_even += num
+    print('sum even-> ', sum_even)
 
-        if choice == 1 or choice == 5:
-            list3 = list1 + list2
-            print("Елементи обох списків: ", list3)
+    sum_odd = 0
+    for num in numbers:
+        if num % 2 != 0:
+            sum_odd += num
+    print('sum odd-> ', sum_odd)
 
-        if choice == 2 or choice == 5:
-            list3 = list(set(list1 + list2))
-            print("Елементи обох списків без повторів: ", list3)
+    indices_three = 1
+    for i, num in enumerate(numbers):
+        if i % 3 == 0:
+            indices_three *= num
+    print('indices that are multiples of 3-> ', indices_three)
 
-        if choice == 3 or choice == 5:
-            list3 = list(set(list1) & set(list2))
-            print("Елементи, спільні для двох списків: ", list3)
+    prod_min_max = 1
+    min_num = min(numbers)
+    max_num = max(numbers)
 
-        if choice == 4 or choice == 5:
-            list3 = list(set(list1) ^ set(list2))
-            print("Тільки унікальні елементи кожного зі списків: ", list3)
+    for num in numbers:
+        if num > min_num and num < max_num:
+            prod_min_max *= num
+    print('min or max-> ', prod_min_max)
 
-    else:
-        print("Елементи в списках мають бути додатними")
+    sum_pos = 0
+    first_found = False
+    last_found = False
+
+    for num in numbers:
+        if num > 0 and first_found == False:
+            first_found = True
+
+        elif first_found == True and num > 0:
+            sum_pos += num
+
+        elif first_found == True and num < 0:
+            last_found = True
+
+        if last_found == True and num > 0:
+            break
+
+    print('sum pos-> ', sum_pos)
     
 
 except Exception as ex:
